@@ -1,0 +1,113 @@
+[
+  {
+    "question": "Witch country is the biggest in the world?",
+    "answers": [
+      {
+        "text": "Russia",
+        "correct": true
+      },
+      {
+        "text": "USA",
+        "correct": false
+      },
+      {
+        "text": "China",
+        "correct": false
+      },
+      {
+        "text": "Canada",
+        "correct": false
+      }
+    ],
+    "background": "first"
+  },
+  {
+    "question": "Which metal is the heaviest?",
+    "answers": [
+      {
+        "text": "Gold",
+        "correct": false
+      },
+      {
+        "text": "Platinum",
+        "correct": false
+      },
+      {
+        "text": "Lead",
+        "correct": false
+      },
+      {
+        "text": "Osmium",
+        "correct": true
+      }
+    ],
+    "background": "second"
+  },
+  {
+    "question": "5+13?",
+    "answers": [
+      {
+        "text": "18",
+        "correct": true
+      },
+      {
+        "text": "16",
+        "correct": false
+      },
+      {
+        "text": "81",
+        "correct": false
+      },
+      {
+        "text": "34",
+        "correct": false
+      }
+    ],
+    "background": "third"
+  },
+  {
+    "question": "When did the second world war start?",
+    "answers": [
+      {
+        "text": "What?",
+        "correct": true
+      },
+      {
+        "text": "1941",
+        "correct": false
+      },
+      {
+        "text": "1939",
+        "correct": false
+      },
+      {
+        "text": "Tell about Volinskaya reznya",
+        "correct": false
+      }
+    ],
+    "background": "quad"
+  },
+  {
+    "question": "How many colors are in the rainbow?",
+    "answers": [
+      {
+        "text": "6",
+        "correct": false
+      },
+      {
+        "text": "5",
+        "correct": false
+      },
+      {
+        "text": "8",
+        "correct": true
+      },
+      {
+        "text": "7",
+        "correct": false
+      }
+    ],
+    "background": "five"
+  }
+
+]
