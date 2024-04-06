@@ -16,7 +16,7 @@ public class QuestionLoader : MonoBehaviour
     public Text _questionText, _trueOrFalseText, _answer1, _answer2, _answer3, _answer4;
     public GameObject[] answ;
     public Image bg;
-    private static int q = 0;
+    private static int count_of_questions = 0;
     private static int rightAnswers = 0;
 
     public class Question
@@ -39,7 +39,7 @@ public class QuestionLoader : MonoBehaviour
 
     public void NewGame()
     {
-        q = 0;
+		count_of_questions = 0;
         rightAnswers = 0;
         _nextQuestion.transform.GetChild(0).GetComponent<Text>().text = "Next question";
         bg.sprite = Resources.Load<Sprite>("default");
@@ -68,22 +68,22 @@ public class QuestionLoader : MonoBehaviour
     public void NextQuestion()
     {
         Question[] result = Read();
-        q++;
-        Debug.Log(q);
-        if (q < result.Length)
+		count_of_questions++;
+        //Debug.Log(count_of_questions);
+        if (count_of_questions < result.Length)
         {
-            var back = result[q].background;
+            var back = result[count_of_questions].background;
             bg.sprite = Resources.Load<Sprite>(back);
             _trueOrFalse.SetActive(false);
-            _questionText.text = result[q].questionText;
-            _answer1.text = result[q].answers[0].text;
-            _answer2.text = result[q].answers[1].text;
-            _answer3.text = result[q].answers[2].text;
-            _answer4.text = result[q].answers[3].text;
+            _questionText.text = result[count_of_questions].questionText;
+            _answer1.text = result[count_of_questions].answers[0].text;
+            _answer2.text = result[count_of_questions].answers[1].text;
+            _answer3.text = result[count_of_questions].answers[2].text;
+            _answer4.text = result[count_of_questions].answers[3].text;
             DidButtonsInteractOrNot(true);
             _nextQuestion.SetActive(false);
         }
-        else if(q == result.Length)
+        else if(count_of_questions == result.Length)
         {
             _questionPanel.SetActive(false);
             _resultGame.SetActive(true);
@@ -95,7 +95,7 @@ public class QuestionLoader : MonoBehaviour
     {
         Question[] result = Read();
         _trueOrFalse.SetActive(true);
-        if (result[q].answers[n].correct == true)
+        if (result[count_of_questions].answers[n].correct == true)
         {
             _trueOrFalseText.text = "True";
             _trueOrFalseText.color = new Color(0,255,0);
@@ -108,7 +108,7 @@ public class QuestionLoader : MonoBehaviour
         }
         DidButtonsInteractOrNot(false);
         _nextQuestion.SetActive(true);
-        if(q == result.Length-1)
+        if(count_of_questions == result.Length-1)
         {
             _nextQuestion.transform.GetChild(0).GetComponent<Text>().text = "Show results";
         }
@@ -157,7 +157,7 @@ public class QuestionLoader : MonoBehaviour
         }
         else
         {
-            Debug.LogError("File not found: " + filePath);
+            //Debug.LogError("File not found: " + filePath);
             return null;
         }
     }
